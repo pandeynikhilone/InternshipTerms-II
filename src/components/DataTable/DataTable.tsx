@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import type { DataTableProps } from "./DataTable.types";
 
 function DataTable<T extends { id: string | number }>({
