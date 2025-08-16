@@ -59,15 +59,6 @@ export const Disabled: Story = {
   },
 };
 
-export const Loading: Story = {
-  args: {
-    label: "Username",
-    placeholder: "Loading...",
-    // Make sure your InputField shows a spinner when `loading` prop is passed
-    loading: true,
-  },
-};
-
 /* --- Variants & Sizes --- */
 export const Variants: Story = {
   render: (args) => (
