@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import type { DataTableProps } from "./DataTable.types";
 
 function DataTable<T extends { id: string | number }>({
-  data,
-  columns,
+  data = [],
+  columns = [],
   loading = false,
   selectable = false,
   onRowSelect,
@@ -46,7 +46,9 @@ function DataTable<T extends { id: string | number }>({
 
   // Loading state
   if (loading) {
-    return <div className="p-4 text-center text-gray-500">Loading data...</div>;
+    return (
+      <div className="p-4 text-center text-gray-500">Loading data...</div>
+    );
   }
 
   // Empty state
@@ -61,9 +63,7 @@ function DataTable<T extends { id: string | number }>({
       <table className="w-full border-collapse border border-gray-300">
         <thead className="bg-gray-100">
           <tr>
-            {selectable && (
-              <th className="p-2 border border-gray-300">Select</th>
-            )}
+            {selectable && <th className="p-2 border border-gray-300">Select</th>}
             {columns.map((col) => (
               <th
                 key={col.key as string}
@@ -95,10 +95,7 @@ function DataTable<T extends { id: string | number }>({
                 </td>
               )}
               {columns.map((col) => (
-                <td
-                  key={col.key as string}
-                  className="p-2 border border-gray-300"
-                >
+                <td key={col.key as string} className="p-2 border border-gray-300">
                   {(row as any)[col.key]}
                 </td>
               ))}
