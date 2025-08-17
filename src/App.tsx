@@ -49,11 +49,11 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-8 flex gap-10 mx-auto w-full">
+    <div className="min-h-screen bg-gray-100 p-8 flex gap-10 mx-auto w-full flex-col lg:flex-row">
       {/* --- InputField Form Demo --- */}
       <form
         onSubmit={handleSubmit}
-        className="max-w-lg w-[50%] flex flex-col gap-4 bg-white p-6 rounded-lg shadow"
+        className="max-w-lg lg:w-[50%] flex flex-col gap-4 bg-white p-6 rounded-lg shadow w-full self-center"
       >
         <InputField
           label="Full Name"
@@ -90,7 +90,7 @@ export default function App() {
       </form>
 
       {/* --- DataTable Demo --- */}
-      <div className="max-w-3xl bg-white p-6 rounded-lg shadow w-[50%]">
+      <div className="max-w-3xl bg-white p-6 rounded-lg shadow lg:w-[50%]">
         <h2 className="text-xl font-semibold mb-4">User List</h2>
         <DataTable<User>
           data={users}
